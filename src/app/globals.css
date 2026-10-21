@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-cormorant), Georgia, Cambria, "Times New Roman", serif;
+  --font-display: var(--font-italiana), var(--font-cormorant), Georgia, serif;
+  --font-script: var(--font-pinyon), "Snell Roundhand", cursive;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+
+  --color-viury-noir: #21171d;
+  --color-viury-ivory: #fbf8f3;
+  --color-viury-gold: #b8915c;
+  --color-viury-gold-dark: #8c6a3f;
+  --color-viury-rosewood: #7a2e43;
+  --color-viury-blush: #ead9cf;
+}
+
+@keyframes marqueePamelaViury {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-pamela {
+  display: flex;
+  width: max-content;
+  animation: marqueePamelaViury 36s linear infinite;
+}
+
+.animate-marquee-pamela:hover {
+  animation-play-state: paused;
+}
+
+@keyframes shimmerGold {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer-line {
+  background: linear-gradient(
+    90deg,
+    rgba(184, 145, 92, 0.12) 0%,
+    rgba(184, 145, 92, 0.95) 50%,
+    rgba(122, 46, 67, 0.55) 72%,
+    rgba(184, 145, 92, 0.12) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmerGold 5.5s linear infinite;
+}
+
+@keyframes kenBurnsViury {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.09) translateY(-1.2%);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsViury 14s ease-in-out infinite alternate;
+}
+
+@keyframes floatSeal {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(2deg);
+  }
+}
+
+.animate-float-seal {
+  animation: floatSeal 6s ease-in-out infinite;
+}
+
+.viury-grain {
+  background-image: radial-gradient(
+      circle at 18% 22%,
+      rgba(184, 145, 92, 0.13) 0,
+      transparent 34%
+    ),
+    radial-gradient(circle at 82% 10%, rgba(122, 46, 67, 0.11) 0, transparent 30%),
+    radial-gradient(circle at 72% 88%, rgba(184, 145, 92, 0.1) 0, transparent 32%);
+}
+
+.viury-arch-frame {
+  border-radius: 13rem 13rem 1.75rem 1.75rem;
+}
